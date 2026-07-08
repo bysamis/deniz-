@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --color-teal-950: #0d2e2c;
+  --color-teal-900: #123b3a;
+  --color-teal-800: #1a4d4a;
+  --color-teal-700: #256461;
+  --color-sand-50: #faf7f0;
+  --color-sand-100: #f1ead9;
+  --color-sand-200: #e6dbc2;
+  --color-ink: #1f2a28;
+  --color-coral: #b4552f;
+  --color-coral-100: #f3e0d5;
+  --color-sage: #52795c;
+  --color-sage-100: #dfe9df;
+  --color-amber: #a9791f;
+  --color-amber-100: #f1e5c9;
+}
+
+@theme inline {
+  --color-teal-950: var(--color-teal-950);
+  --color-teal-900: var(--color-teal-900);
+  --color-teal-800: var(--color-teal-800);
+  --color-teal-700: var(--color-teal-700);
+  --color-sand: var(--color-sand-100);
+  --color-sand-50: var(--color-sand-50);
+  --color-sand-200: var(--color-sand-200);
+  --color-ink: var(--color-ink);
+  --color-coral: var(--color-coral);
+  --color-coral-100: var(--color-coral-100);
+  --color-sage: var(--color-sage);
+  --color-sage-100: var(--color-sage-100);
+  --color-amber: var(--color-amber);
+  --color-amber-100: var(--color-amber-100);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.input {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(18, 59, 58, 0.15);
+  background: #fff;
+  padding: 0.55rem 0.75rem;
+  color: var(--color-ink);
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.input:focus {
+  border-color: var(--color-teal-700);
+  box-shadow: 0 0 0 3px rgba(37, 100, 97, 0.15);
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* subtle tide-line divider, the page's one signature flourish */
+.tide-line {
+  height: 6px;
+  background-image: radial-gradient(circle at 6px 0px, var(--color-sand-200) 3px, transparent 3.5px);
+  background-size: 12px 6px;
+  background-repeat: repeat-x;
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fadeIn 0.35s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
